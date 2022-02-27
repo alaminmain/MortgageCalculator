@@ -1,7 +1,6 @@
 using MortgageCalculator.API.Controllers;
 using MortgageCalculator.API.Models.DAO;
 using MortgageCalculator.API.Models.Enum;
-using System;
 using Xunit;
 
 namespace MortgageCalculator.Test
@@ -13,8 +12,8 @@ namespace MortgageCalculator.Test
         {
             //Arrange
             var Calculator = new CalculatorController();
-            var data = new CalculatorObj(300000, 5, 20, 5, PaymentSchedule.Monthly);
-            const double ans = 4529.1;
+            var data = new CalculatorObj(400000, 9, 30, 5, PaymentSchedule.Monthly);
+            const double ans = 5812.34;
 
             //Act
             var result = Calculator.GetPaymentPerPaymentSchedule(data);
@@ -30,8 +29,8 @@ namespace MortgageCalculator.Test
         {
             //Arrange
             var Calculator = new CalculatorController();
-            var data = new CalculatorObj(1000000, 10, 20, 5, PaymentSchedule.Accelerated);
-            const double ans = 7831.57;
+            var data = new CalculatorObj(2500000, 8, 30, 5, PaymentSchedule.Accelerated);
+            const double ans = 16353.28;
 
             //Act
             var result = Calculator.GetPaymentPerPaymentSchedule(data);
@@ -48,8 +47,8 @@ namespace MortgageCalculator.Test
         {
             //Arrange
             var Calculator = new CalculatorController();
-            var data = new CalculatorObj(1000000, 10, 20, 5, PaymentSchedule.BiWeekly);
-            const double ans = 8485.24;
+            var data = new CalculatorObj(600000, 15, 25, 6, PaymentSchedule.BiWeekly);
+            const double ans = 4748.52;
 
             //Act
             var result = Calculator.GetPaymentPerPaymentSchedule(data);
